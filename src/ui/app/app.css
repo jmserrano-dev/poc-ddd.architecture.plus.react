@@ -1,4 +1,10 @@
-.App {
-  font-family: sans-serif;
-  text-align: center;
+/*---------- GENERAL ---------- */
+.width-100 {
+  width: 100%;
+}
+
+/*---------- FIN GENERAL ---------- */
+
+#components-layout-demo-top.layout {
+  min-height: 100vh;
 }

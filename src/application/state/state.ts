@@ -1,5 +1,5 @@
-import { ITodoModel } from "@domain/todo";
+import { ITaskModel } from "@domain/task";
 
 export class State {
-  todos: ITodoModel[] = [];
+  tasks: ITaskModel[] = [];
 }

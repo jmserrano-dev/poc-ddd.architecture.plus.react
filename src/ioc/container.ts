@@ -1,11 +1,11 @@
 import * as inversify from "inversify-props";
 import { IOC } from "./ioc";
-import { TodoRepository } from "@domain/todo";
+import { TaskRepository } from "@domain/task";
 import { Logger } from "@domain/seedwork/use-cases";
 import { Runner, ExecutorLink, LoggerLink } from "@domain/seedwork/runner";
 import { ConsoleLogger, ReactStateManager } from "@infrastructure/seedwork";
-import { GetTodosQuery } from "@application/todo";
-import { TodoInMemoryRepository } from "@infrastructure/todos";
+import { GetTasksQuery, CreateTaskCommand } from "@application/task";
+import { TaskInMemoryRepository } from "@infrastructure/tasks";
 import { StateManager } from "@application/state";
 
 export class Container {
@@ -38,13 +38,18 @@ export class Container {
       .inSingletonScope();
 
     inversify.container
-      .bind<TodoRepository>(IOC.TODO_REPOSITORY)
-      .to(TodoInMemoryRepository)
+      .bind<TaskRepository>(IOC.TASK_REPOSITORY)
+      .to(TaskInMemoryRepository)
       .inSingletonScope();
 
     inversify.container
-      .bind<GetTodosQuery>(IOC.GET_TODOS_QUERY)
-      .to(GetTodosQuery)
+      .bind<GetTasksQuery>(IOC.GET_TASKS_QUERY)
+      .to(GetTasksQuery)
+      .inSingletonScope();
+
+    inversify.container
+      .bind<CreateTaskCommand>(IOC.CREATE_TASK_COMMAND)
+      .to(CreateTaskCommand)
       .inSingletonScope();
 
     this._container = inversify.container;

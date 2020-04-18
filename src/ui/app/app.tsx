@@ -1,15 +1,21 @@
 import React from "react";
-import { TodoPage } from "../features/task-board";
+import { Layout } from "antd";
+import { Header } from "./header/header";
+import { Content } from "./content/content";
+import { Footer } from "./footer/footer";
+import { TaskBoard } from "../features/task-board";
 
 import "./app.css";
+import "antd/dist/antd.css";
 
 export const App = () => {
   return (
-    <div className="App">
-      <h1>Hello CodeSandbox</h1>
-      <h2>Start editing to see some magic happen!</h2>
-
-      <TodoPage />
-    </div>
+    <Layout id="components-layout-demo-top" className="layout">
+      <Header />
+      <Content>
+        <TaskBoard />
+      </Content>
+      <Footer />
+    </Layout>
   );
 };

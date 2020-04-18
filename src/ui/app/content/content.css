@@ -1,0 +1,13 @@
+.content {
+  padding: 0 50px;
+}
+
+.content .breadcrumb {
+  margin: 16px 0;
+}
+
+.content .site-layout-content {
+  background: #fff;
+  padding: 24px;
+  height: 100%;
+}

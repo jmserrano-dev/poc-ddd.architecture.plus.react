@@ -2,12 +2,12 @@ import { AggregateRoot, Ensure } from "../seedwork/utils";
 import { Guid } from "@domain/shared";
 import { DomainException } from "@domain/seedwork/exceptions";
 
-export interface ITodoModel extends AggregateRoot {
+export interface ITaskModel extends AggregateRoot {
   text: string;
   completed: boolean;
 }
 
-export class TodoModel implements ITodoModel {
+export class TaskModel implements ITaskModel {
   public readonly id: Guid;
   public text: string;
   public completed: boolean;
@@ -18,10 +18,10 @@ export class TodoModel implements ITodoModel {
     this.completed = completed;
   }
 
-  public static create({ text, completed }: ITodoModel, guid?: Guid) {
+  public static create({ text, completed }: ITaskModel, guid?: Guid) {
     Ensure.that<DomainException>(text.isEmpty(), t.ensure.empty);
 
-    return new TodoModel(guid || Guid.create(), text, completed);
+    return new TaskModel(guid || Guid.create(), text, completed);
   }
 
   public changeState() {
