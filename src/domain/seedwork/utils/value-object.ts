@@ -4,8 +4,8 @@ export interface ValueObjectProps {
   [index: string]: any;
 }
 
-export class ValueObject<Props extends ValueObjectProps> {
-  props: Readonly<Props>;
+export abstract class ValueObject<Props extends ValueObjectProps> {
+  protected props: Readonly<Props>;
 
   public constructor(props: Props) {
     this.props = Object.freeze(props);

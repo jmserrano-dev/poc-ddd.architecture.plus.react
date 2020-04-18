@@ -1,5 +1,5 @@
 import React from "react";
-import { TodoPage } from "../features/todo";
+import { TodoPage } from "../features/task-board";
 
 import "./app.css";
 

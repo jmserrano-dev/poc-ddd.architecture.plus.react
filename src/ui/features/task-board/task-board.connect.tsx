@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { useInject } from "inversify-hooks";
 import { StateManager } from "@application/state";
-import { GetTodosQuery } from "@application/todo/queries/get-todos-query";
-import { TodoModel } from "@domain/todo";
+import { GetTodosQuery } from "@application/todo/queries/get-todos.query";
+import { ITodoModel } from "@domain/todo";
 import { Observer } from "@domain/seedwork/observer";
 import { IOC } from "@ioc";
 
@@ -14,7 +14,7 @@ export const TodoPage = () => {
   return (
     <ul>
       {todos.map((todo) => (
-        <li key={todo.id}>{`${todo.id}-${todo.text}-${todo.completed}`}</li>
+        <li key={todo.id.value}>{`${todo.text}-${todo.completed}`}</li>
       ))}
     </ul>
   );
@@ -33,7 +33,7 @@ const useGetTodosQuery = () => {
 };
 
 const useStageManger = () => {
-  const [todos, setTodos] = useState<TodoModel[]>([]);
+  const [todos, setTodos] = useState<ITodoModel[]>([]);
   const [stateManager] = useInject<StateManager>(IOC.STATE_MANAGER);
 
   const observer: Observer = {

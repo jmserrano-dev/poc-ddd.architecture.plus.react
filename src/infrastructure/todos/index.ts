@@ -1,1 +1,1 @@
-export * from "./todo-in-memory-repository";
+export * from "./todo-in-memory.repository";

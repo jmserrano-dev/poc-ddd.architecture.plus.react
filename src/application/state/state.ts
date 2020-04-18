@@ -1,5 +1,5 @@
-import { TodoModel } from "@domain/todo";
+import { ITodoModel } from "@domain/todo";
 
 export class State {
-  todos: TodoModel[] = [];
+  todos: ITodoModel[] = [];
 }
