@@ -14,19 +14,19 @@ i18next.init({
         translation: {
           features: {
             tasks: {
-              empty: "No hay tareas, puedes comenzar añadiendo alguna!",
+              empty: "There are no tasks, you can start by adding some!",
               add: {
                 placeholder: "Add new task...",
                 button: "Add",
               },
               ensure: {
-                empty: "El texto no puede ser vacío",
+                empty: "The description cannot empty",
               },
               exception: {
-                "not-found": "Tarea no encontrada",
-                create: "Error al intentar agregar una nueva tarea",
-                status: "Error al intental cambiar el estado de una tarea",
-                remove: "Error al intentar eliminar una tarea",
+                "not-found": "Task not found",
+                create: "Error trying to add a new task",
+                status: "Error trying to change task status",
+                remove: "Error trying to remove task",
               },
             },
           },
@@ -43,12 +43,12 @@ i18next.init({
               button: "Añadir",
             },
             ensure: {
-              empty: "El texto no puede ser vacío",
+              empty: "La descripción no puede estar vacía",
             },
             exception: {
               "not-found": "Tarea no encontrada",
               create: "Error al intentar agregar una nueva tarea",
-              status: "Error al intental cambiar el estado de una tarea",
+              status: "Error al intentar cambiar el estado de una tarea",
               remove: "Error al intentar eliminar una tarea",
             },
           },
