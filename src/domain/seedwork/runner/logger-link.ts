@@ -12,7 +12,7 @@ export class LoggerLink extends BaseLink {
   next(context: Context): void {
     this.logger.group(context.useCase.constructor.name);
     this.logger.group("Parameters");
-    this.logger.log(`${context.param ?? "-"}`);
+    this.logger.log(`${context.param ? JSON.stringify(context.param) : "-"}`);
     this.logger.groupEnd();
     this.logger.group("Result");
     this.logger.object(context.result ?? "-");

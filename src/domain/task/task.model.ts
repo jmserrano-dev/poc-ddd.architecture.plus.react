@@ -13,29 +13,25 @@ export class TaskModel implements ITaskModel {
   public completed: boolean;
 
   private constructor(id: Guid, text: string, completed: boolean) {
+    Ensure.that<DomainException>(text.isEmpty(), "features.tasks.ensure.empty");
+
     this.id = id;
     this.text = text;
     this.completed = completed;
   }
 
   public static create({ text, completed }: ITaskModel, guid?: Guid) {
-    Ensure.that<DomainException>(text.isEmpty(), t.ensure.empty);
-
     return new TaskModel(guid || Guid.create(), text, completed);
   }
 
   public changeState() {
     this.completed = !this.completed;
+    return this;
   }
 
   public changeText(text: string) {
-    Ensure.that<DomainException>(text.isEmpty(), t.ensure.empty);
+    Ensure.that<DomainException>(text.isEmpty(), "features.tasks.ensure.empty");
     this.text = text;
+    return this;
   }
 }
-
-const t = {
-  ensure: {
-    empty: "El texto no puede ser vacío",
-  },
-};

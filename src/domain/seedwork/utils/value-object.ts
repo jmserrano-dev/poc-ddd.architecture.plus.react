@@ -24,4 +24,8 @@ export abstract class ValueObject<Props extends ValueObjectProps> {
     }
     return shallowEqual(this.props, object.props);
   }
+
+  toString() {
+    return this.props.toString();
+  }
 }

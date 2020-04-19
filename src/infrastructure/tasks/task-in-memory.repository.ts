@@ -39,4 +39,11 @@ export class TaskInMemoryRepository implements TaskRepository {
       resolve();
     });
   }
+
+  public remove(id: Guid): Promise<void> {
+    return new Promise((resolve) => {
+      this.tasks.delete(id);
+      resolve();
+    });
+  }
 }

@@ -5,4 +5,5 @@ export interface TaskRepository {
   all: () => Promise<ITaskModel[]>;
   create: (task: ITaskModel) => Promise<void>;
   update: (id: Guid, task: Partial<ITaskModel>) => Promise<void>;
+  remove: (id: Guid) => Promise<void>;
 }

@@ -1,5 +1,8 @@
-import { UseCase } from './use-case'
+import { UseCase } from "./use-case";
 
-export abstract class Command<Param = void> extends UseCase<void, Param> {
-  readonly = false
+export abstract class Command<Param = void> extends UseCase<
+  Promise<void>,
+  Param
+> {
+  readonly = false;
 }

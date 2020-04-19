@@ -3,8 +3,18 @@ import { IOC } from "./ioc";
 import { TaskRepository } from "@domain/task";
 import { Logger } from "@domain/seedwork/use-cases";
 import { Runner, ExecutorLink, LoggerLink } from "@domain/seedwork/runner";
-import { ConsoleLogger, ReactStateManager } from "@infrastructure/seedwork";
-import { GetTasksQuery, CreateTaskCommand } from "@application/task";
+import { Translator } from "@domain/seedwork/translator";
+import {
+  ConsoleLogger,
+  ReactStateManager,
+  I18nextTranslator,
+} from "@infrastructure/seedwork";
+import {
+  GetTasksQuery,
+  CreateTaskCommand,
+  RemoveTaskCommand,
+  ChangeStatusTaskCommand,
+} from "@application/task";
 import { TaskInMemoryRepository } from "@infrastructure/tasks";
 import { StateManager } from "@application/state";
 
@@ -16,6 +26,11 @@ export class Container {
     inversify.container
       .bind<Logger>(IOC.LOGGER)
       .to(ConsoleLogger)
+      .inSingletonScope();
+
+    inversify.container
+      .bind<Translator>(IOC.TRANSLATOR)
+      .to(I18nextTranslator)
       .inSingletonScope();
 
     inversify.container.bind<Window>(IOC.WINDOW).toConstantValue(window);
@@ -50,6 +65,16 @@ export class Container {
     inversify.container
       .bind<CreateTaskCommand>(IOC.CREATE_TASK_COMMAND)
       .to(CreateTaskCommand)
+      .inSingletonScope();
+
+    inversify.container
+      .bind<ChangeStatusTaskCommand>(IOC.CHANGE_STATUS_TASK_COMMAND)
+      .to(ChangeStatusTaskCommand)
+      .inSingletonScope();
+
+    inversify.container
+      .bind<RemoveTaskCommand>(IOC.REMOVE_TASK_COMMAND)
+      .to(RemoveTaskCommand)
       .inSingletonScope();
 
     this._container = inversify.container;
