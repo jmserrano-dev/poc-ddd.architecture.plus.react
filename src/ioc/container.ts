@@ -3,7 +3,7 @@ import { IOC } from "./ioc";
 import { TaskRepository } from "@domain/task";
 import { Logger } from "@domain/seedwork/use-cases";
 import { Runner, ExecutorLink, LoggerLink } from "@domain/seedwork/runner";
-import { Translator } from "@domain/seedwork/translator";
+import { Translator } from "@domain/locale";
 import {
   ConsoleLogger,
   ReactStateManager,

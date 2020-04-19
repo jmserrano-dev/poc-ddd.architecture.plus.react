@@ -4,11 +4,14 @@ import { Header } from "./header/header";
 import { Content } from "./content/content";
 import { Footer } from "./footer/footer";
 import { TaskBoard } from "../features/task-board";
+import { useLocale } from "../seedwork/hoc";
 
 import "./app.css";
 import "antd/dist/antd.css";
 
 export const App = () => {
+  useLocale();
+
   return (
     <Layout id="components-layout-demo-top" className="layout">
       <Header />

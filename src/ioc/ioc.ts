@@ -1,8 +1,7 @@
 export const IOC = {
-  DOMAIN_EXCEPTION: Symbol.for("DOMAIN_EXCEPTION"),
+  WINDOW: Symbol.for("WINDOW"),
   LOGGER: Symbol.for("LOGGER"),
   TRANSLATOR: Symbol.for("TRANSLATOR"),
-  WINDOW: Symbol.for("WINDOW"),
   STATE_MANAGER: Symbol.for("STATE_MANAGER"),
   RUNNER: Symbol.for("RUNNER"),
   LOGGER_LINK: Symbol.for("LOGGER_LINK"),

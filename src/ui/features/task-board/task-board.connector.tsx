@@ -13,7 +13,7 @@ import { Observer } from "@domain/seedwork/observer";
 import { ITaskModel } from "@domain/task";
 import { Guid } from "@domain/shared";
 import { Notify } from "../../seedwork";
-import { Translator } from "@domain/seedwork/translator";
+import { useTranslator } from "@ui/seedwork/hoc";
 
 export const withTaskBoardConnector = (
   Component: React.ComponentType<any>
@@ -25,8 +25,8 @@ export const withTaskBoardConnector = (
 };
 
 const useStageManger = () => {
-  const [tasks, setTasks] = useState<ITaskModel[]>([]);
   const [stateManager] = useInject<StateManager>(IOC.STATE_MANAGER);
+  const [tasks, setTasks] = useState<ITaskModel[]>(stateManager.state.tasks);
 
   const observer: Observer = {
     notify: () => setTasks(stateManager.state.tasks),
@@ -41,7 +41,7 @@ const useStageManger = () => {
 };
 
 const useConnetors = () => {
-  const [i18n] = useInject<Translator>(IOC.TRANSLATOR);
+  const { t } = useTranslator();
   const [getTasksQuery] = useInject<GetTasksQuery>(IOC.GET_TASKS_QUERY);
   const [createTaskCommand] = useInject<CreateTaskCommand>(
     IOC.CREATE_TASK_COMMAND
@@ -62,13 +62,10 @@ const useConnetors = () => {
       createTaskCommand
         .execute(text)
         .catch(({ message }) =>
-          Notify.show(
-            i18n.t("features.tasks.exception.create"),
-            i18n.t(message)
-          )
+          Notify.show(t("features.tasks.exception.create"), t(message))
         );
     },
-    [createTaskCommand, i18n]
+    [createTaskCommand, t]
   );
 
   const onRemove = useCallback(
@@ -76,12 +73,9 @@ const useConnetors = () => {
       removeTaskCommand
         .execute(id)
         .catch(({ message }) =>
-          Notify.show(
-            i18n.t("features.tasks.exception.remove"),
-            i18n.t(message)
-          )
+          Notify.show(t("features.tasks.exception.remove"), t(message))
         ),
-    [removeTaskCommand, i18n]
+    [removeTaskCommand, t]
   );
 
   const onChangeStatus = useCallback(
@@ -89,12 +83,9 @@ const useConnetors = () => {
       await changeStatusTaskCommand
         .execute(id)
         .catch(({ message }) =>
-          Notify.show(
-            i18n.t("features.tasks.exception.status"),
-            i18n.t(message)
-          )
+          Notify.show(t("features.tasks.exception.status"), t(message))
         ),
-    [changeStatusTaskCommand, i18n]
+    [changeStatusTaskCommand, t]
   );
 
   return { onLoad, onCreate, onChangeStatus, onRemove };

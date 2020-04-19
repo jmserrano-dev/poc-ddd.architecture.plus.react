@@ -12,9 +12,7 @@ import {
   RemoveContract,
   ChangeStatusContract,
 } from "./task.contracts";
-import { useInject } from "inversify-hooks";
-import { Translator } from "@domain/seedwork/translator";
-import { IOC } from "@ioc";
+import { useTranslator } from "@ui/seedwork/hoc";
 
 export interface Props
   extends LoadContract,
@@ -31,7 +29,7 @@ export const TaskBoardComponent = ({
   onRemove,
   onChangeStatus,
 }: Props) => {
-  const [i18n] = useInject<Translator>(IOC.TRANSLATOR);
+  const { t } = useTranslator();
 
   useEffect(() => {
     onLoad();
@@ -55,7 +53,7 @@ export const TaskBoardComponent = ({
       ) : (
         <Result
           icon={<UnorderedListOutlined />}
-          title={i18n.t("features.tasks.empty")}
+          title={t("features.tasks.empty")}
         />
       )}
     </Space>

@@ -1,33 +1,39 @@
 import i18next from "i18next";
-
-const LANGUAGES: string[] = ["en", "es"];
-const DEFAULT_LANGUAGE = Object.freeze("es");
+import { Locale } from "@domain/locale";
 
 i18next.init({
   interpolation: {
     escapeValue: false,
   },
-  lng: DEFAULT_LANGUAGE,
+  lng: Locale.DEFAULT,
+  whitelist: Locale.ALL,
   resources: {
     en: {
       translation: {
-        translation: {
-          features: {
-            tasks: {
-              empty: "There are no tasks, you can start by adding some!",
-              add: {
-                placeholder: "Add new task...",
-                button: "Add",
-              },
-              ensure: {
-                empty: "The description cannot empty",
-              },
-              exception: {
-                "not-found": "Task not found",
-                create: "Error trying to add a new task",
-                status: "Error trying to change task status",
-                remove: "Error trying to remove task",
-              },
+        menu: {
+          tasks: "Tasks",
+        },
+        features: {
+          language: {
+            title: "Language",
+            exception: {
+              "not-found": "Language not found",
+            },
+          },
+          tasks: {
+            empty: "There are no tasks, you can start by adding some!",
+            add: {
+              placeholder: "Add new task...",
+              button: "Add",
+            },
+            ensure: {
+              empty: "The description cannot empty",
+            },
+            exception: {
+              "not-found": "Task not found",
+              create: "Error trying to add a new task",
+              status: "Error trying to change task status",
+              remove: "Error trying to remove task",
             },
           },
         },
@@ -35,6 +41,9 @@ i18next.init({
     },
     es: {
       translation: {
+        menu: {
+          tasks: "Tareas",
+        },
         features: {
           tasks: {
             empty: "No hay tareas, puedes comenzar añadiendo alguna!",
@@ -59,4 +68,3 @@ i18next.init({
 });
 
 export default i18next;
-export { LANGUAGES, DEFAULT_LANGUAGE };
