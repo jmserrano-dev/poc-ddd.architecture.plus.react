@@ -33,6 +33,7 @@ export class ReactStateManager implements StateManager {
 
   register(observer: Observer) {
     this.observers.push(observer);
+    observer.notify();
   }
 
   unregister(observer: Observer) {

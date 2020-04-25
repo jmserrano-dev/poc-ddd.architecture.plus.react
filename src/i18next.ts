@@ -14,6 +14,12 @@ i18next.init({
           tasks: "Tasks",
         },
         features: {
+          permissions: {
+            title: "Permissions",
+            exception: {
+              denied: "You haven't permissions to execute this action",
+            },
+          },
           language: {
             title: "Language",
             exception: {
@@ -31,6 +37,7 @@ i18next.init({
             },
             exception: {
               "not-found": "Task not found",
+              get: "Error trying to get the tasks",
               create: "Error trying to add a new task",
               status: "Error trying to change task status",
               remove: "Error trying to remove task",
@@ -45,6 +52,12 @@ i18next.init({
           tasks: "Tareas",
         },
         features: {
+          permissions: {
+            title: "Permisos",
+            exception: {
+              denied: "No tiene permiso para ejecutar esta acción",
+            },
+          },
           tasks: {
             empty: "No hay tareas, puedes comenzar añadiendo alguna!",
             add: {
@@ -56,6 +69,7 @@ i18next.init({
             },
             exception: {
               "not-found": "Tarea no encontrada",
+              get: "Error al intentar obtener las tareas",
               create: "Error al intentar agregar una nueva tarea",
               status: "Error al intentar cambiar el estado de una tarea",
               remove: "Error al intentar eliminar una tarea",

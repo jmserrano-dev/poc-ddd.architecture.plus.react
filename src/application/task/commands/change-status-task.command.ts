@@ -9,9 +9,15 @@ import {
 import { Injectable, Inject } from "@domain/seedwork/di";
 import { Guid } from "@domain/shared";
 import { IOC } from "@ioc";
+import { Permissions } from "@domain/permissions";
 
 @Injectable()
 export class ChangeStatusTaskCommand extends Command<Guid> {
+  permissions: Permissions = Permissions.create({
+    action: "task",
+    permission: "write",
+  });
+
   @Inject(IOC.STATE_MANAGER)
   private stateManager!: StateManager;
 

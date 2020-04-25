@@ -12,7 +12,7 @@ import {
   RemoveContract,
   ChangeStatusContract,
 } from "./task.contracts";
-import { useTranslator } from "@ui/seedwork/hoc";
+import { useTranslator, withLoading } from "@ui/seedwork";
 
 export interface Props
   extends LoadContract,

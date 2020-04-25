@@ -4,7 +4,7 @@ import { Header } from "./header/header";
 import { Content } from "./content/content";
 import { Footer } from "./footer/footer";
 import { TaskBoard } from "../features/task-board";
-import { useLocale } from "../seedwork/hoc";
+import { useLocale } from "../seedwork";
 
 import "./app.css";
 import "antd/dist/antd.css";

@@ -6,7 +6,7 @@ import { Translator } from "@domain/locale";
 import { IOC } from "@ioc";
 import { Notify } from "@ui/seedwork";
 import { StateManager } from "@application/state";
-import { useLocale } from "@ui/seedwork/hoc";
+import { useLocale } from "@ui/seedwork";
 
 export const Language = () => {
   const [i18n] = useInject<Translator>(IOC.TRANSLATOR);
@@ -17,7 +17,7 @@ export const Language = () => {
   const handleChangeLanguage = (language: string) => {
     i18n
       .changeLanguage(language)
-      .then((locale) => stateManager.patch({ ...stateManager.state, locale }))
+      .then((locale) => stateManager.patch({ locale }))
       .catch(() =>
         Notify.show(
           i18n.t("features.language.title"),

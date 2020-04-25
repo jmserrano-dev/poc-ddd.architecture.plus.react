@@ -3,9 +3,15 @@ import { Query } from "@domain/seedwork/use-cases";
 import { TaskRepository, ITaskModel } from "@domain/task";
 import { Injectable, Inject } from "@domain/seedwork/di";
 import { IOC } from "@ioc";
+import { Permissions } from "@domain/permissions";
 
 @Injectable()
 export class GetTasksQuery extends Query<Promise<ITaskModel[]>> {
+  permissions: Permissions = Permissions.create({
+    action: "task",
+    permission: "read",
+  });
+
   @Inject(IOC.STATE_MANAGER)
   private stateManager!: StateManager;
 

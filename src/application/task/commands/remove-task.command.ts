@@ -3,10 +3,16 @@ import { Command } from "@domain/seedwork/use-cases";
 import { TaskRepository } from "@domain/task";
 import { Injectable, Inject } from "@domain/seedwork/di";
 import { Guid } from "@domain/shared";
+import { Permissions } from "@domain/permissions";
 import { IOC } from "@ioc";
 
 @Injectable()
 export class RemoveTaskCommand extends Command<Guid> {
+  permissions: Permissions = Permissions.create({
+    action: "task",
+    permission: "write",
+  });
+
   @Inject(IOC.STATE_MANAGER)
   private stateManager!: StateManager;
 

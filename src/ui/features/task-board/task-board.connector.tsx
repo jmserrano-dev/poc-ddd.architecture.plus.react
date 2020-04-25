@@ -13,7 +13,7 @@ import { Observer } from "@domain/seedwork/observer";
 import { ITaskModel } from "@domain/task";
 import { Guid } from "@domain/shared";
 import { Notify } from "../../seedwork";
-import { useTranslator } from "@ui/seedwork/hoc";
+import { useTranslator } from "@ui/seedwork";
 
 export const withTaskBoardConnector = (
   Component: React.ComponentType<any>
@@ -28,14 +28,14 @@ const useStageManger = () => {
   const [stateManager] = useInject<StateManager>(IOC.STATE_MANAGER);
   const [tasks, setTasks] = useState<ITaskModel[]>(stateManager.state.tasks);
 
-  const observer: Observer = {
-    notify: () => setTasks(stateManager.state.tasks),
-  };
-
   useEffect(() => {
+    const observer: Observer = {
+      notify: () => setTasks(stateManager.state.tasks),
+    };
+
     stateManager.register(observer);
     return () => stateManager.unregister(observer);
-  }, [observer, stateManager]);
+  }, [stateManager]);
 
   return { tasks };
 };
@@ -53,9 +53,13 @@ const useConnetors = () => {
     IOC.REMOVE_TASK_COMMAND
   );
 
-  const onLoad = useCallback(async () => await getTasksQuery.execute(), [
-    getTasksQuery,
-  ]);
+  const onLoad = useCallback(() => {
+    getTasksQuery
+      .execute()
+      .catch(({ message }) =>
+        Notify.show(t("features.tasks.exception.get"), t(message))
+      );
+  }, [getTasksQuery, t]);
 
   const onCreate = useCallback(
     (text: string) => {

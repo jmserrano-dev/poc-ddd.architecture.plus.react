@@ -1,10 +1,6 @@
 import React, { useState } from "react";
 import { Checkbox, Card } from "antd";
-import {
-  ClockCircleOutlined,
-  DeleteOutlined,
-  EditOutlined,
-} from "@ant-design/icons";
+import { DeleteOutlined } from "@ant-design/icons";
 
 import { ITaskModel } from "@domain/task";
 import { ChangeStatusContract, RemoveContract } from "../task.contracts";
@@ -35,8 +31,6 @@ export const Task = ({
       className="with-100"
       hoverable
       actions={[
-        <ClockCircleOutlined key="setting" disabled={disabled} />,
-        <EditOutlined key="edit" disabled={disabled} />,
         <DeleteOutlined
           key="close"
           disabled={disabled}

@@ -1,3 +1,4 @@
+import { withSuspense } from "@ui/seedwork";
 import React, { PropsWithChildren } from "react";
 import { Layout, Breadcrumb } from "antd";
 
@@ -5,7 +6,7 @@ import "./content.css";
 
 interface Props {}
 
-export const Content = ({ children }: PropsWithChildren<Props>) => {
+const ContentComponent = ({ children }: PropsWithChildren<Props>) => {
   return (
     <Layout.Content className="content">
       <Breadcrumb className="breadcrumb">
@@ -16,3 +17,5 @@ export const Content = ({ children }: PropsWithChildren<Props>) => {
     </Layout.Content>
   );
 };
+
+export const Content = withSuspense(ContentComponent);

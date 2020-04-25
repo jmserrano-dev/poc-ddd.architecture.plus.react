@@ -1,8 +1,14 @@
 import * as inversify from "inversify-props";
 import { IOC } from "./ioc";
+import { PermissionsRepository } from "@domain/permissions";
 import { TaskRepository } from "@domain/task";
 import { Logger } from "@domain/seedwork/use-cases";
-import { Runner, ExecutorLink, LoggerLink } from "@domain/seedwork/runner";
+import {
+  Runner,
+  ExecutorLink,
+  LoggerLink,
+  PermissionsLink,
+} from "@domain/seedwork/runner";
 import { Translator } from "@domain/locale";
 import {
   ConsoleLogger,
@@ -15,6 +21,7 @@ import {
   RemoveTaskCommand,
   ChangeStatusTaskCommand,
 } from "@application/task";
+import { PermissionsInMemoryRepository } from "@infrastructure/permissions";
 import { TaskInMemoryRepository } from "@infrastructure/tasks";
 import { StateManager } from "@application/state";
 
@@ -38,6 +45,11 @@ export class Container {
     inversify.container.bind<Runner>(IOC.RUNNER).to(Runner).inSingletonScope();
 
     inversify.container
+      .bind<PermissionsLink>(IOC.PERMISIONS_LINK)
+      .to(PermissionsLink)
+      .inSingletonScope();
+
+    inversify.container
       .bind<ExecutorLink>(IOC.EXECUTOR_LINK)
       .to(ExecutorLink)
       .inSingletonScope();
@@ -50,6 +62,11 @@ export class Container {
     inversify.container
       .bind<StateManager>(IOC.STATE_MANAGER)
       .to(ReactStateManager)
+      .inSingletonScope();
+
+    inversify.container
+      .bind<PermissionsRepository>(IOC.PERMISSIONS_REPOSITORY)
+      .to(PermissionsInMemoryRepository)
       .inSingletonScope();
 
     inversify.container

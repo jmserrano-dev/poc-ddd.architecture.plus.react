@@ -1,14 +1,14 @@
-import { EmptyLink } from './empty-link'
-import { Context } from './context'
-import { Link } from './link'
+import { EmptyLink } from "./links/empty-link";
+import { Context } from "./context";
+import { Link } from "./link";
 
 export abstract class BaseLink {
-  nextLink: Link = new EmptyLink()
+  nextLink: Link = new EmptyLink();
 
   setNext(link: Link): Link {
-    this.nextLink = link
-    return this
+    this.nextLink = link;
+    return this;
   }
 
-  abstract next(context: Context): void
+  abstract next(context: Context): Promise<void>;
 }
