@@ -10,6 +10,8 @@ PoC based on [cesalberca - arquitectura de la VUEna](https://github.com/cesalber
   - [x] Load query
   - [x] Create / remove / changeStatus commands
   - [x] React proyect + Ant System Design
+  - [x] Permissions flow (runner step)
+  - [x] Loading flow (runner step)
 - Pending:
   - [ ] Add theme light / dark
   - [ ] Add tests jest / cypress
