@@ -9,7 +9,7 @@ logs
 **/*.back.*
 
 node_modules
-bower_components
+bowercomponents
 
 *.sublime*
 
@@ -17,7 +17,10 @@ psd
 thumb
 sketch
 
+# Parcel 
 build
+dist
+.cache
 
 # End of https://www.gitignore.io/api/react
 .now

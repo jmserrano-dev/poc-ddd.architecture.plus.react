@@ -1,6 +1,6 @@
 import { AggregateRoot, Ensure } from "../seedwork/utils";
-import { Guid } from "@domain/shared";
-import { DomainException } from "@domain/seedwork/exceptions";
+import { Guid } from "domain/shared";
+import { DomainException } from "domain/seedwork/exceptions";
 
 export interface ITaskModel extends AggregateRoot {
   text: string;

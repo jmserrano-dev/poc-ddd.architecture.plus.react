@@ -2,11 +2,11 @@ import React from "react";
 import { Menu, Dropdown } from "antd";
 import { FlagOutlined } from "@ant-design/icons";
 import { useInject } from "inversify-hooks";
-import { Translator } from "@domain/locale";
-import { IOC } from "@ioc";
-import { Notify } from "@ui/seedwork";
-import { StateManager } from "@application/state";
-import { useLocale } from "@ui/seedwork";
+import { Translator } from "domain/locale";
+import { IOC } from "ioc";
+import { Notify } from "ui/seedwork";
+import { StateManager } from "application/state";
+import { useLocale } from "ui/seedwork";
 
 export const Language = () => {
   const [i18n] = useInject<Translator>(IOC.TRANSLATOR);

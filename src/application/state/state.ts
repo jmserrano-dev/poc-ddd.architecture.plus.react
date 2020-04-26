@@ -1,5 +1,5 @@
-import { ITaskModel } from "@domain/task";
-import { Locale } from "@domain/locale";
+import { ITaskModel } from "domain/task";
+import { Locale } from "domain/locale";
 
 export class State {
   loading: boolean = false;

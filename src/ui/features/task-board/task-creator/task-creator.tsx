@@ -1,7 +1,7 @@
 import React from "react";
 import { Input } from "antd";
 import { CreateContract } from "../task.contracts";
-import { useTranslator } from "@ui/seedwork";
+import { useTranslator } from "ui/seedwork";
 
 interface Props extends CreateContract {}
 

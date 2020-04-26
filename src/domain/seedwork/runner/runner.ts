@@ -1,9 +1,9 @@
 import { Inject, Injectable } from "../di";
 import { LoggerLink, ExecutorLink, PermissionsLink } from "./links";
 import { UseCase } from "../use-cases/use-case";
-import { IOC } from "@ioc";
+import { IOC } from "ioc";
 import { inject } from "inversify-props";
-import { StateManager } from "@application/state";
+import { StateManager } from "application/state";
 
 @Injectable()
 export class Runner {

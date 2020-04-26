@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Space, Row, Col, Result } from "antd";
 import { UnorderedListOutlined } from "@ant-design/icons";
 
-import { ITaskModel } from "@domain/task";
+import { ITaskModel } from "domain/task";
 
 import { Task } from "./task/Task";
 import { TaskCreator } from "./task-creator/task-creator";
@@ -12,7 +12,7 @@ import {
   RemoveContract,
   ChangeStatusContract,
 } from "./task.contracts";
-import { useTranslator, withLoading } from "@ui/seedwork";
+import { useTranslator, withLoading } from "ui/seedwork";
 
 export interface Props
   extends LoadContract,

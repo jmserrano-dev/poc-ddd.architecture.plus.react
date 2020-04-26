@@ -1,5 +1,5 @@
-import { Guid } from "@domain/shared";
-import { ITaskModel } from "@domain/task";
+import { Guid } from "domain/shared";
+import { ITaskModel } from "domain/task";
 
 export interface LoadContract {
   onLoad: () => Promise<ITaskModel[]>;

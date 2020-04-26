@@ -1,5 +1,5 @@
-import { Injectable } from "@domain/seedwork/di";
-import { Locale, Translator } from "@domain/locale";
+import { Injectable } from "domain/seedwork/di";
+import { Locale, Translator } from "domain/locale";
 import i18next from "i18next";
 
 @Injectable()

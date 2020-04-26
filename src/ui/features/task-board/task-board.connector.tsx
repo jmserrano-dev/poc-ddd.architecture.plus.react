@@ -1,19 +1,19 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { useInject } from "inversify-hooks";
 
-import { IOC } from "@ioc";
-import { StateManager } from "@application/state";
+import { IOC } from "ioc";
+import { StateManager } from "application/state";
 import {
   GetTasksQuery,
   CreateTaskCommand,
   RemoveTaskCommand,
   ChangeStatusTaskCommand,
-} from "@application/task";
-import { Observer } from "@domain/seedwork/observer";
-import { ITaskModel } from "@domain/task";
-import { Guid } from "@domain/shared";
+} from "application/task";
+import { Observer } from "domain/seedwork/observer";
+import { ITaskModel } from "domain/task";
+import { Guid } from "domain/shared";
 import { Notify } from "../../seedwork";
-import { useTranslator } from "@ui/seedwork";
+import { useTranslator } from "ui/seedwork";
 
 export const withTaskBoardConnector = (
   Component: React.ComponentType<any>

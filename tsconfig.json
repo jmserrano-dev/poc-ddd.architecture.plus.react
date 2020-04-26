@@ -27,25 +27,25 @@
     "strict": true,
     "baseUrl": "./",
     "paths": {
-      "@ioc": [
+      "ioc": [
         "src/ioc"
       ],
-      "@application/*": [
+      "application/*": [
         "src/application/*"
       ],
-      "@domain/*": [
+      "domain/*": [
         "src/domain/*"
       ],
-      "@infrastructure/*": [
+      "infrastructure/*": [
         "src/infrastructure/*"
       ],
-      "@ui/*": [
+      "ui/*": [
         "src/ui/*"
       ],
-      "@components/*": [
+      "components/*": [
         "src/components/*"
       ],
-      "@features/*": [
+      "features/*": [
         "src/features/*"
       ],
     }

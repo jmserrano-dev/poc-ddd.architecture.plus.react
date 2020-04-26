@@ -1,15 +1,15 @@
-import { StateManager } from "@application/state";
-import { Command } from "@domain/seedwork/use-cases";
+import { StateManager } from "application/state";
+import { Command } from "domain/seedwork/use-cases";
 import {
   TaskRepository,
   TaskModel,
   TaskNotFoundException,
   ITaskModel,
-} from "@domain/task";
-import { Injectable, Inject } from "@domain/seedwork/di";
-import { Guid } from "@domain/shared";
-import { IOC } from "@ioc";
-import { Permissions } from "@domain/permissions";
+} from "domain/task";
+import { Injectable, Inject } from "domain/seedwork/di";
+import { Guid } from "domain/shared";
+import { IOC } from "ioc";
+import { Permissions } from "domain/permissions";
 
 @Injectable()
 export class ChangeStatusTaskCommand extends Command<Guid> {

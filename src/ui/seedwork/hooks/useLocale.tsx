@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { useInject } from "inversify-hooks";
-import { StateManager } from "@application/state";
-import { IOC } from "@ioc";
-import { Observer } from "@domain/seedwork/observer";
+import { StateManager } from "application/state";
+import { IOC } from "ioc";
+import { Observer } from "domain/seedwork/observer";
 
 export const useLocale = () => {
   const [stateManager] = useInject<StateManager>(IOC.STATE_MANAGER);

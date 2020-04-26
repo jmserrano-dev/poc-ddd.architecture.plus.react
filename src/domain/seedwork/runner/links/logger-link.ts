@@ -1,8 +1,8 @@
 import { BaseLink } from "../base-link";
 import { Context } from "../context";
-import { IOC } from "@ioc";
-import { Inject, Injectable } from "@domain/seedwork/di";
-import { Logger } from "@domain/seedwork/use-cases";
+import { IOC } from "ioc";
+import { Inject, Injectable } from "domain/seedwork/di";
+import { Logger } from "domain/seedwork/use-cases";
 
 @Injectable()
 export class LoggerLink extends BaseLink {

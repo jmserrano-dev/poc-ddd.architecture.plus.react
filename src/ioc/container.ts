@@ -1,29 +1,29 @@
 import * as inversify from "inversify-props";
 import { IOC } from "./ioc";
-import { PermissionsRepository } from "@domain/permissions";
-import { TaskRepository } from "@domain/task";
-import { Logger } from "@domain/seedwork/use-cases";
+import { PermissionsRepository } from "domain/permissions";
+import { TaskRepository } from "domain/task";
+import { Logger } from "domain/seedwork/use-cases";
 import {
   Runner,
   ExecutorLink,
   LoggerLink,
   PermissionsLink,
-} from "@domain/seedwork/runner";
-import { Translator } from "@domain/locale";
+} from "domain/seedwork/runner";
+import { Translator } from "domain/locale";
 import {
   ConsoleLogger,
   ReactStateManager,
   I18nextTranslator,
-} from "@infrastructure/seedwork";
+} from "infrastructure/seedwork";
 import {
   GetTasksQuery,
   CreateTaskCommand,
   RemoveTaskCommand,
   ChangeStatusTaskCommand,
-} from "@application/task";
-import { PermissionsInMemoryRepository } from "@infrastructure/permissions";
-import { TaskInMemoryRepository } from "@infrastructure/tasks";
-import { StateManager } from "@application/state";
+} from "application/task";
+import { PermissionsInMemoryRepository } from "infrastructure/permissions";
+import { TaskInMemoryRepository } from "infrastructure/tasks";
+import { StateManager } from "application/state";
 
 export class Container {
   private static _instance: Container | null = null;

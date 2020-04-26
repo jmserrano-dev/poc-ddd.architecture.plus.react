@@ -5,11 +5,11 @@ import React from "react";
 import { render } from "react-dom";
 import { I18nextProvider } from "react-i18next";
 
-import { Container, IOC } from "@ioc";
-import { App } from "@ui/app";
+import { Container, IOC } from "ioc";
+import { App } from "ui/app";
 
 import i18n from "./i18next";
-import { PermissionsRepository } from "@domain/permissions";
+import { PermissionsRepository } from "domain/permissions";
 
 Container.instance()
   .get<PermissionsRepository>(IOC.PERMISSIONS_REPOSITORY)

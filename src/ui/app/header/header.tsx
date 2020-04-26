@@ -1,6 +1,6 @@
 import React from "react";
 import { Layout, Menu, Row, Col } from "antd";
-import { useTranslator } from "@ui/seedwork";
+import { useTranslator } from "ui/seedwork";
 import { Language } from "./language/language";
 
 import "./header.css";

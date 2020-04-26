@@ -15,6 +15,7 @@ PoC based on [cesalberca - arquitectura de la VUEna](https://github.com/cesalber
   - [x] Permissions flow (runner step)
   - [x] Loading flow (runner step)
   - [x] Add dark theme
+  - [x] Bundle with Parcel
 - Pending:
   - [ ] Unit testing
   - [ ] Add tests jest / cypress

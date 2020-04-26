@@ -1,12 +1,12 @@
-import { IOC } from "@ioc";
+import { IOC } from "ioc";
 import { BaseLink } from "../base-link";
 import { Context } from "../context";
 import { Inject, Injectable } from "../../di";
 import {
   PermissionsRepository,
   PermissionsDeniedException,
-} from "@domain/permissions";
-import { Logger } from "@domain/seedwork/use-cases";
+} from "domain/permissions";
+import { Logger } from "domain/seedwork/use-cases";
 
 @Injectable()
 export class PermissionsLink extends BaseLink {

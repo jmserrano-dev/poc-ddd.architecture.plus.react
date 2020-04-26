@@ -1,4 +1,4 @@
-import { withSuspense } from "@ui/seedwork";
+import { withSuspense } from "ui/seedwork";
 import React, { PropsWithChildren } from "react";
 import { Layout, Breadcrumb } from "antd";
 

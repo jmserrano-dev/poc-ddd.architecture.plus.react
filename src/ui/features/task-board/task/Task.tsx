@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Checkbox, Card } from "antd";
 import { DeleteOutlined } from "@ant-design/icons";
 
-import { ITaskModel } from "@domain/task";
+import { ITaskModel } from "domain/task";
 import { ChangeStatusContract, RemoveContract } from "../task.contracts";
 
 interface Props extends ITaskModel, ChangeStatusContract, RemoveContract {}

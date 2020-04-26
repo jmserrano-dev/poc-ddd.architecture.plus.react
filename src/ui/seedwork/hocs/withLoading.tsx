@@ -1,9 +1,9 @@
 import { Spin } from "antd";
 import { useInject } from "inversify-hooks";
 import React, { PropsWithChildren, useEffect, useState } from "react";
-import { IOC } from "@ioc";
-import { StateManager } from "@application/state";
-import { Observer } from "@domain/seedwork/observer";
+import { IOC } from "ioc";
+import { StateManager } from "application/state";
+import { Observer } from "domain/seedwork/observer";
 
 interface ILoading {}
 

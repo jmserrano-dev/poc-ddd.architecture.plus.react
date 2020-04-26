@@ -1,6 +1,6 @@
-import { StateManager, State } from "@application/state";
-import { Injectable } from "@domain/seedwork/di";
-import { Observer } from "@domain/seedwork/observer";
+import { StateManager, State } from "application/state";
+import { Injectable } from "domain/seedwork/di";
+import { Observer } from "domain/seedwork/observer";
 
 @Injectable()
 export class ReactStateManager implements StateManager {

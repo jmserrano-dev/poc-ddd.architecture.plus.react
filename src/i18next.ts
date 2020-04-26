@@ -1,5 +1,5 @@
 import i18next from "i18next";
-import { Locale } from "@domain/locale";
+import { Locale } from "domain/locale";
 
 i18next.init({
   interpolation: {

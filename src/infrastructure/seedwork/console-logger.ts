@@ -1,6 +1,6 @@
-import { IOC } from "@ioc";
-import { Injectable, Inject } from "@domain/seedwork/di";
-import { Logger } from "@domain/seedwork/use-cases";
+import { IOC } from "ioc";
+import { Injectable, Inject } from "domain/seedwork/di";
+import { Logger } from "domain/seedwork/use-cases";
 
 @Injectable()
 export class ConsoleLogger implements Logger {

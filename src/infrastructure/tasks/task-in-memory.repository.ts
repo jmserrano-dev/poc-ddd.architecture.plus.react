@@ -1,11 +1,7 @@
-import { Injectable } from "@domain/seedwork/di";
-import {
-  TaskRepository,
-  TaskNotFoundException,
-  ITaskModel,
-} from "@domain/task";
-import { Guid } from "@domain/shared";
-import { sleep } from "@infrastructure/seedwork";
+import { Injectable } from "domain/seedwork/di";
+import { TaskRepository, TaskNotFoundException, ITaskModel } from "domain/task";
+import { Guid } from "domain/shared";
+import { sleep } from "infrastructure/seedwork";
 
 const REQUEST_TIME_IN_MILLISECONDS = 2000;
 

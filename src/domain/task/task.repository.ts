@@ -1,5 +1,5 @@
 import { ITaskModel } from "./task.model";
-import { Guid } from "@domain/shared";
+import { Guid } from "domain/shared";
 
 export interface TaskRepository {
   all: () => Promise<ITaskModel[]>;

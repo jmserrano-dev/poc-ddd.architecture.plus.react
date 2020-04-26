@@ -1,7 +1,7 @@
 import { container } from "inversify-props";
-import { IOC } from "@ioc";
+import { IOC } from "ioc";
 import { Runner } from "../runner/runner";
-import { Permissions } from "@domain/permissions";
+import { Permissions } from "domain/permissions";
 
 export abstract class UseCase<Result = void, Param = void> {
   abstract readonly: boolean;

@@ -1,9 +1,9 @@
-import { Injectable } from "@domain/seedwork/di";
+import { Injectable } from "domain/seedwork/di";
 import {
   Permissions,
   PermissionsRepository,
   IPermissionsModel,
-} from "@domain/permissions";
+} from "domain/permissions";
 
 @Injectable()
 export class PermissionsInMemoryRepository implements PermissionsRepository {
