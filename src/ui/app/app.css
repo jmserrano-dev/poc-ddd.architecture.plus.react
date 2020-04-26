@@ -1,3 +1,8 @@
+/*---------- ANTD ----------*/
+@import "~antd/dist/antd.css";
+/* @import "~antd/dist/antd.compact.css"; */
+@import "~antd/dist/antd.dark.css";
+
 /*---------- GENERAL ---------- */
 .width-100 {
   width: 100%;

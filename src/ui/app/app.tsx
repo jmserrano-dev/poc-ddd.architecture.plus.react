@@ -7,7 +7,6 @@ import { TaskBoard } from "../features/task-board";
 import { useLocale } from "../seedwork";
 
 import "./app.css";
-import "antd/dist/antd.css";
 
 export const App = () => {
   useLocale();
